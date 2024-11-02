@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Code Editor</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="./javascript/Script.js"></script>
+</head>
+
+<body>
+    <form>
+        <h1 id="heading">HTML CODE EDITOR</h1>
+        <div class="content">
+            <div class="code-section html">
+                <h4>HTML</h4>
+                <textarea id="htmlCode" rows="15" placeholder="Write HTML code here..."></textarea>
+            </div>
+            <div class="code-section css">
+                <h4>CSS</h4>
+                <textarea id="cssCode" rows="15" placeholder="Write CSS code here..."></textarea>
+            </div>
+            <div class="code-section javascript">
+                <h4>JavaScript</h4>
+                <textarea id="jsCode" rows="15" placeholder="Write JavaScript code here..."></textarea>
+            </div>
+        </div>
+        <div class="output">
+            <h4><span>OUTPUT</span> <span><button type="button" onclick="compileCode()">RUN</button></span></h4>
+            <iframe id="output"></iframe>
+        </div>
+    </form>
+</body>
+
+</html>
