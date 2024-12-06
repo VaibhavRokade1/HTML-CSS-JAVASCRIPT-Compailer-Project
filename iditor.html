@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML, CSS & JavaScript Compiler</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .editor-container {
+            display: flex;
+            width: 100%;
+            max-width: 800px;
+            gap: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 200px;
+            padding: 10px;
+            font-family: monospace;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+        }
+
+        #output {
+            width: 100%;
+            height: 300px;
+            border: 1px solid #ccc;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>HTML, CSS & JavaScript Compiler</h1>
+
+    <div class="editor-container">
+        <textarea id="htmlCode" placeholder="Write HTML code here..."></textarea>
+        <textarea id="cssCode" placeholder="Write CSS code here..."></textarea>
+        <textarea id="jsCode" placeholder="Write JavaScript code here..."></textarea>
+    </div>
+
+    <button onclick="compileCode()">Run Code</button>
+
+    <iframe id="output"></iframe>
+
+    <script>
+        function compileCode() {
+            const htmlCode = document.getElementById("htmlCode").value;
+            const cssCode = `<style>${document.getElementById("cssCode").value}</style>`;
+            const jsCode = `<script>${document.getElementById("jsCode").value}<\/script>`;
+
+            const output = document.getElementById("output");
+            output.contentDocument.open();
+            output.contentDocument.write(htmlCode + cssCode + jsCode);
+            output.contentDocument.close();
+        }
+    </script>
+</body>
+
+</html>
